@@ -9,13 +9,23 @@ exports.add = (a, b) => {
 
 // average calculator
 exports.calculateAverage = (listNumber) => {
-    let average, total, listLength;
+    let average, total, listLength, filteredList;
+    filteredList = listNumber.filter(e => {
+        if (!isNaN(e)) {
+            return e > 0 || e < 0
+        }
+    })
 
-    listLength = listNumber.length
-    total = listNumber.reduce((acc, cur) => {      
+    listLength = filteredList.length 
+    
+    if (listLength>0){
+        total = filteredList.reduce((acc, cur) => {
         return acc + cur
     })
-    average = total / listLength;
-    return average;
+
+        average = total / listLength;
+    }
+    
+    return average.toFixed(2);
 
 }
