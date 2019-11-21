@@ -7,14 +7,19 @@ test('add - should return total of two numbers', () => {
     
 })
 
-test('Get Average - should return average of list of numbers',()=>{
-    const average =businesslogic.calculateAverage([2,2,4,8]);
-    expect(average).toBe("4.00");
+describe('Get Average',()=>{
+    it('should return average of list of numbers',()=>{
+        const average =businesslogic.calculateAverage([2,2,4,8]);
+        expect(average).toBe("4.00");
+    })
+    
+    it('should filter strings and empty fields  and zero and return average',()=>{
+        const average =businesslogic.calculateAverage([2,2,'i','',0]);
+        expect(average).toBe("2.00");
+    })
+
 })
 
-test('Get Average - should filter strings and empty fields  and zero and return average',()=>{
-    const average =businesslogic.calculateAverage([2,2,'i','',0]);
-    expect(average).toBe("2.00");
-})
+
 
 
