@@ -4,11 +4,9 @@
   "description": "coding challange",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon server.js",
     "start-server": "node server.js"
-   
-     
   },
   "author": "abdelaziz",
   "license": "ISC",
@@ -17,5 +15,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-validator": "^6.2.0"
+  },
+  "devDependencies": {
+    "jest": "^24.9.0"
   }
 }

@@ -9,7 +9,6 @@ const { validationResult } = require('express-validator')
 exports.getSum = (req, res, next) => {
     const errors = validationResult(req);
 
-
     try {
         if (!errors.isEmpty()) throw error;
         const firstNum = +req.query.firstNum;

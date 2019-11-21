@@ -10,6 +10,7 @@ exports.add = (a, b) => {
 // average calculator
 exports.calculateAverage = (listNumber) => {
     let average, total, listLength, filteredList;
+
     filteredList = listNumber.filter(e => {
         if (!isNaN(e)) {
             return e > 0 || e < 0
@@ -27,5 +28,6 @@ exports.calculateAverage = (listNumber) => {
     }
     
     return average.toFixed(2);
+
 
 }
