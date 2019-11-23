@@ -1,5 +1,5 @@
 
-const businesslogic = require('../logic/business-logic')
+const businesslogic = require('../../logic/business-logic')
 
 describe('get-sum',()=>{
     it('should return total of two numbers', () => {
