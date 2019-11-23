@@ -4,7 +4,7 @@
   "description": "coding challange",
   "main": "server.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --watchAll",
     "start": "nodemon server.js",
     "start-server": "node server.js"
   },
@@ -17,6 +17,7 @@
     "express-validator": "^6.2.0"
   },
   "devDependencies": {
-    "jest": "^24.9.0"
+    "jest": "^24.9.0",
+    "supertest": "^4.0.2"
   }
 }

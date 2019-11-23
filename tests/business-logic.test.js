@@ -1,11 +1,15 @@
 
 const businesslogic = require('../logic/business-logic')
 
-test('add - should return total of two numbers', () => {
-    const total = businesslogic.add(4, 6);
-    expect(total).toBe(10);
-    
+describe('get-sum',()=>{
+    it('should return total of two numbers', () => {
+        const total = businesslogic.add(4, 6);
+        expect(total).toBe(10);
+        
+    })
+
 })
+
 
 describe('Get Average',()=>{
     it('should return average of list of numbers',()=>{

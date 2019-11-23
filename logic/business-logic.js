@@ -22,7 +22,6 @@ exports.calculateAverage = (listNumber) => {
         total = filteredList.reduce((acc, cur) => {
         return acc + cur
     })
-
         average = total / listLength;
     }
     
