@@ -1,16 +1,17 @@
-
-
 const businessLogic = require('../logic/business-logic');
-const { validationResult } = require('express-validator')
+const { validationResult} = require('express-validator')
+const errorHandeler =require('../helper/error')
+
+
 
 
 
 // add controller
 exports.getSum = (req, res, next) => {
-    const errors = validationResult(req);
+    errorHandeler.errorHandeler(req,validationResult)
+
 
     try {
-        if (!errors.isEmpty()) throw error;
         const firstNum = +req.query.firstNum;
         const secondNum = +req.query.secondNum;
         const sum = businessLogic.add(firstNum, secondNum);
@@ -18,27 +19,23 @@ exports.getSum = (req, res, next) => {
             total: sum
         })
     } catch (error) {
-        res.status(406).json({ message: errors.array()[0].msg })
+        next(error)
     }
 
 }
 
 // average controller
-exports.postAverage = (req, res) => {
-
-    const errors = validationResult(req);
-   
-
-    try {
-         if (!errors.isEmpty()) throw error;
+exports.postAverage = (req, res,next) => {    
+  errorHandeler.errorHandeler(req,validationResult)
+    try {       
         const listArray = req.body
         const average = businessLogic.calculateAverage(listArray);
         res.status(200).json({
             average: average
         })
 
-    } catch (error) {
-        res.status(406).json({ message: 'invalid data' })
+    } catch (error) {            
+        next(error)
     }
 
 }

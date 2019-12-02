@@ -8,7 +8,11 @@ const { body, query } = require('express-validator')
 // post average
 router.post('/post-average',
     body().custom(value => {
-        return Array.isArray(value);
+        
+        if(!Array.isArray(value)){
+            throw new Error('you must pass arrayList')
+        }
+        return true;
     })
     , calcController.postAverage)
 

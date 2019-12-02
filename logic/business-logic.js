@@ -23,9 +23,14 @@ exports.calculateAverage = (listNumber) => {
         return acc + cur
     })
         average = total / listLength;
-    }
-    
-    return average.toFixed(2);
+        return average.toFixed(2);
+    } else{
+        throw new Error('empty array')
 
+    }  
+   
 
 }
+
+
+

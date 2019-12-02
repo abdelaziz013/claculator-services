@@ -12,6 +12,14 @@ app.use(cors())
 
 
 app.use('/api',calcRouter);
+app.use((error,req,res,next)=>{
+    console.log(error)
+    const message = error.message
+    res.status(406).json({            
+        message: message
+
+    })
+})
 
 
 
