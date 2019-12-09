@@ -8,7 +8,7 @@ const errorHandeler =require('../helper/error')
 
 // add controller
 exports.getSum = (req, res, next) => {
-    errorHandeler.errorHandeler(req,validationResult)
+    errorHandeler.errorHandeler(req,validationResult);
 
 
     try {
